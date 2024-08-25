@@ -30,6 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // scrolling into the links
 document.addEventListener('DOMContentLoaded', function () {
+  const targetLinks = ['translation', 'seo-localisation', 'content-writing', 'editing'];
+
+  // Function to check if the link is one of the target links
+  function isTargetLink(href) {
+    const targetId = href.split('#')[1];
+    return targetLinks.includes(targetId);
+  }
+
   const links = document.querySelectorAll('a[href*="#"]');
 
   links.forEach(link => {
@@ -37,41 +45,40 @@ document.addEventListener('DOMContentLoaded', function () {
       const href = this.getAttribute('href');
       const targetId = href.split('#')[1];
 
- 
-      const isOnServicesPage = window.location.pathname.includes('services.html');
+      if (isTargetLink(href)) {
+        const isOnServicesPage = window.location.pathname.includes('services.html');
 
-      if (!isOnServicesPage) {
-
-        window.location.href = `services.html#${targetId}`;
-      } else {
-
-        event.preventDefault();
-
-
-        scrollToElement(targetId);
+        if (!isOnServicesPage) {
+          // Redirect to services page and scroll to the section
+          window.location.href = `services.html#${targetId}`;
+          event.preventDefault(); // Prevent default link behavior
+        } else {
+          // If already on services page, scroll to the section
+          event.preventDefault(); // Prevent default link behavior
+          scrollToElement(targetId);
+        }
       }
     });
   });
 
   const hash = window.location.hash.substring(1);
-  if (hash) {
-
+  if (hash && targetLinks.includes(hash)) {
     setTimeout(() => {
       scrollToElement(hash);
     }, 10); 
   }
 
-
   function scrollToElement(id) {
     const targetElement = document.getElementById(id);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 270, 
+        top: targetElement.offsetTop - 270, // Adjust this offset as needed for your header height
         behavior: 'smooth'
       });
     }
   }
 });
+
 
 
 /////////////////////////////////
