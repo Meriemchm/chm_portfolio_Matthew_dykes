@@ -1,4 +1,4 @@
-/* Basic resets */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +7,7 @@ body {
 
 /* Title */
 .title {
-    font-size: 2.5rem; /* Reduced size for better scalability */
+    font-size: 2.5rem; 
     font-weight: bold;
     margin-bottom: 20px; 
     text-align: left;
@@ -17,41 +17,41 @@ body {
     margin: 3rem 1rem;
 }
 
-/* About Me Section */
+
 .about-me-section {
     padding: 20px;
     max-width: 1200px;
-    margin: 6rem auto; /* Center align the section */
+    margin: 6rem auto; 
 }
 
-/* About Me Container */
+
 .about-me-container {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 8rem;
     justify-content: center;
-    align-items: flex-start; /* Adjust alignment */
-    gap: 2rem; /* Adjust gap for smaller screens */
+    align-items: flex-start; 
+    gap: 2rem; 
 }
 
-/* About Me Image */
+
 .about-me-image {
     flex: 1;
-    max-width: 100%; /* Ensures image fits container */
+    max-width: 100%;
 }
 
 .about-me-image img {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     border-radius: 8px;
 }
 
-/* About Me Content */
+
 .about-me-content {
     flex: 2;
     padding: 20px;
-    max-width: 100%; /* Ensure it doesn’t overflow */
-    box-sizing: border-box; /* Include padding in width calculation */
+    max-width: 100%; 
+    box-sizing: border-box; 
 }
 
 .about-me-content .bold-text{
@@ -66,7 +66,7 @@ body {
 }
 
 
-/* About Me Columns */
+
 .about-me-columns {
     display: flex;
     flex-wrap: wrap;
@@ -78,7 +78,7 @@ body {
     min-width: 250px;
 }
 
-/* Responsive table styles */
+
 .about-me-table {
     width: 100%;
     overflow-x: auto;
@@ -113,7 +113,7 @@ tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Responsive table design for mobile */
+
 @media (max-width: 768px) {
     .about-me-table {
         display: block;
@@ -126,7 +126,7 @@ tbody tr:nth-child(even) {
     }
 
     thead {
-        display: none; /* Hide the table headers */
+        display: none; 
     }
 
     tbody {
@@ -158,10 +158,10 @@ tbody tr:nth-child(even) {
     }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .title {
-        font-size: 2rem; /* Adjust font size for smaller screens */
+        font-size: 2rem; 
     }
 
     .about-me-container {

@@ -1,4 +1,4 @@
-/* Main section styling */
+
 main {
     padding: 2rem;
     background-color: #f9f9f9;
@@ -12,7 +12,7 @@ h1 {
     color: #333;
 }
 
-/* Section styling */
+
 section {
     margin-bottom: 2rem;
 }
@@ -33,7 +33,7 @@ section h2 {
     color: #e08d2c;
 
 }
-/* Flex container styling */
+
 .flex-container-service {
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@ section h2 {
     margin-bottom: 2rem;
 }
 
-/* Reverse layout for desktop */
+
 .flex-container-service.reverse {
     flex-direction: row-reverse;
 }
@@ -56,7 +56,7 @@ section h2 {
     border-radius: 8px;
 }
 
-/* Responsive styling */
+
 @media (max-width: 768px) {
     .flex-container-service {
         flex-direction: column-reverse;
