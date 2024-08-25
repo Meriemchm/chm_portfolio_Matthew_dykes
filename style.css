@@ -21,6 +21,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+/*scrool animation*/
+.fade-up {
+  opacity: 0; /* Initially invisible */
+  transform: translateY(20px); /* Slightly moved down */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+.fade-up.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
 
 section {
   margin: 10px 0;

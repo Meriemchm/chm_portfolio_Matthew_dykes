@@ -6,6 +6,28 @@ document.addEventListener("DOMContentLoaded", () => {
     navbarLinks.classList.toggle("active");
   });
 });
+////////////////////////////////////////
+//scroll animation
+document.addEventListener('DOMContentLoaded', function () {
+  const elements = document.querySelectorAll('.fade-up');
+
+  const fadeUpOnScroll = () => {
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Check if the element is in the viewport
+      if (rect.top < windowHeight && rect.bottom >= 0) {
+        element.classList.add('visible'); // Add class to start animation
+      }
+    });
+  };
+
+  // Run the function on scroll and on page load
+  window.addEventListener('scroll', fadeUpOnScroll);
+  fadeUpOnScroll(); // Initial check to fade up elements already in view on page load
+});
+
 
 /////////////////////////////////
 // Define the navigation items
