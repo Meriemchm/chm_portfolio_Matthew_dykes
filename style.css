@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Lato:wght@100;300;400;700;900&display=swap");
 html {
-  scroll-behavior: smooth; /* Enables smooth scrolling */
+  scroll-behavior: smooth; 
 }
 
 :root {
@@ -332,6 +332,8 @@ main {
   width: 100%;
   margin: auto;
 }
+
+/* hero styles */
 
 .flex-container-hero {
   display: flex;
