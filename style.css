@@ -506,7 +506,7 @@ h1 {
 /* Button styles */
 .primary-button,
 .secondary-button {
-  background-color: #d34836;
+  background-color: #e08d2c;
   font-family: "Lato", sans-serif;
   color: #ffffff;
   border: none;
@@ -533,7 +533,7 @@ footer {
   color: white;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-family: var(--font-primary);
   font-size: 18px;
 }
@@ -578,12 +578,13 @@ footer {
 }
 
 .social-icons a {
-  color: #ffffff;
+  
+  color: #e08d2c;
   text-decoration: none;
 }
 
 .social-icons a:hover {
-  color: #e08d2c;
+  color: #ffffff;
 }
 
 @media all and (max-width: 800px) {
