@@ -29,6 +29,10 @@ section p {
     color: #666;
 }
 
+section h2 {
+    color: #e08d2c;
+
+}
 /* Flex container styling */
 .flex-container-service {
     display: flex;
