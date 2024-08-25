@@ -8,53 +8,71 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ////////////////////////////////////////
 //scroll animation
-document.addEventListener('DOMContentLoaded', function () {
-  const elements = document.querySelectorAll('.fade-up');
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".fade-up");
 
   const fadeUpOnScroll = () => {
     elements.forEach((element) => {
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-
       if (rect.top < windowHeight && rect.bottom >= 0) {
-        element.classList.add('visible'); 
+        element.classList.add("visible");
       }
     });
   };
 
-
-  window.addEventListener('scroll', fadeUpOnScroll);
-  fadeUpOnScroll(); 
+  window.addEventListener("scroll", fadeUpOnScroll);
+  fadeUpOnScroll();
 });
 
 /////////////////////////
 
 // scrolling into the links
-
 document.addEventListener('DOMContentLoaded', function () {
-  
   const links = document.querySelectorAll('a[href*="#"]');
 
   links.forEach(link => {
     link.addEventListener('click', function (event) {
-      event.preventDefault(); 
+      const href = this.getAttribute('href');
+      const targetId = href.split('#')[1];
 
-      
-      const targetId = this.getAttribute('href').split('#')[1];
-      const targetElement = document.getElementById(targetId);
+      // Check if the current page is 'services.html'
+      const isOnServicesPage = window.location.pathname.includes('services.html');
 
-      if (targetElement) {
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - 270, 
-          behavior: 'smooth' 
-        });
+      if (!isOnServicesPage) {
+        // If not on 'services.html', navigate to 'services.html' with the targetId as hash
+        window.location.href = `services.html#${targetId}`;
+      } else {
+        // If already on 'services.html', prevent default anchor behavior
+        event.preventDefault();
+
+        // Scroll to the element
+        scrollToElement(targetId);
       }
     });
   });
-});
 
+  // Check if we have a hash in the URL when loading 'services.html'
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    // Scroll to the element with a delay to ensure the page has loaded
+    setTimeout(() => {
+      scrollToElement(hash);
+    }, 10); // Adjust this timeout as needed
+  }
+
+  // Function to scroll to the element
+  function scrollToElement(id) {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 270, // Adjust this offset for your header height
+        behavior: 'smooth'
+      });
+    }
+  }
+});
 
 
 /////////////////////////////////
@@ -128,28 +146,28 @@ const cardItems = [
     description:
       "Do you need a human to translate your French or Spanish content into English?",
     link: "accordion.html",
-    svgPaths:  '1.svg',
+    svgPaths: "1.svg",
   },
   {
     title: "Content Writing",
     description:
       "Do you need written content for your English-speaking audience? Whether it's a news article, a blog post, or content for your website, I can help.",
     link: "tabgallery.html",
-    svgPaths:  '2.svg',
+    svgPaths: "2.svg",
   },
   {
     title: "Editing and Proofreading",
     description:
       "Do you have some English content that you need a native speaker to take a final look at?",
     link: "review.html",
-    svgPaths:  '3.svg',
+    svgPaths: "3.svg",
   },
   {
     title: "SEO Localisation",
     description:
       "Need guidance on how to present your content effectively? Schedule a consultation for personalized advice and strategies.",
     link: "review.html",
-    svgPaths:  '4.svg',
+    svgPaths: "4.svg",
   },
 ];
 
