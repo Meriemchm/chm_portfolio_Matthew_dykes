@@ -185,28 +185,28 @@ const cardItems = [
     description:
       "Do you need a human to translate your French or Spanish content into English?",
     link: "accordion.html",
-    svgPaths: "1.svg",
+    svgPaths: "doc/1.svg",
   },
   {
     title: "Content Writing",
     description:
       "Do you need written content for your English-speaking audience? Whether it's a news article, a blog post, or content for your website, I can help.",
     link: "tabgallery.html",
-    svgPaths: "2.svg",
+    svgPaths: "doc/2.svg",
   },
   {
     title: "Editing and Proofreading",
     description:
       "Do you have some English content that you need a native speaker to take a final look at?",
     link: "review.html",
-    svgPaths: "3.svg",
+    svgPaths: "doc/3.svg",
   },
   {
     title: "SEO Localisation",
     description:
       "Need guidance on how to present your content effectively? Schedule a consultation for personalized advice and strategies.",
     link: "review.html",
-    svgPaths: "4.svg",
+    svgPaths: "doc/4.svg",
   },
 ];
 
