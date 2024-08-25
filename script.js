@@ -135,6 +135,39 @@ NavItems.forEach((navItem) => {
 });
 
 document.querySelector(".navbar-link-container").innerHTML = NavbarHtml;
+//////////////////////////////
+
+// navigation items for footer
+const footerNavItems = [
+  {
+    name: "Home",
+    href: "index.html",
+  },
+  {
+    name: "Who am I?",
+    href: "about.html",
+  },
+  {
+    name: "Services",
+    href: "services.html",
+  },
+  {
+    name: "Contact me",
+    href: "contact.html",
+  },
+];
+
+let footerNavHtml = "";
+
+footerNavItems.forEach((navItem) => {
+
+    footerNavHtml += `
+        
+    <li><a href="${navItem.href}">${navItem.name}</a></li>`;
+  
+});
+
+document.querySelector(".footer-links").innerHTML = footerNavHtml;
 
 ////////////////////////
 // cards
