@@ -568,6 +568,8 @@ footer {
   color: white; /* Ensure text color consistency */
   text-align: left;
   margin-bottom: 20px;
+  font: bold;
+  font-size: 23px;
 }
 
 .footer-section-contact,
@@ -584,6 +586,12 @@ footer {
   margin: 0;
   padding: 0;
   font-weight: var(--font-weight-normal);
+}
+
+.footer-links li {
+
+  margin: 5px 0;
+
 }
 
 .footer-links li a {
