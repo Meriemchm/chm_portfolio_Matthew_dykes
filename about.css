@@ -54,6 +54,18 @@ body {
     box-sizing: border-box; /* Include padding in width calculation */
 }
 
+.about-me-content .bold-text{
+
+    padding: 20px 0;
+    font-weight: 800;
+    font-size:30px;
+    align-self: flex-start;
+    justify-self: start;
+    color: #e08d2c;
+
+}
+
+
 /* About Me Columns */
 .about-me-columns {
     display: flex;
@@ -82,14 +94,19 @@ table {
 
 th, td {
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #969595;
     vertical-align: top;
 }
 
 th {
-    background-color: black;
+    background-color: rgb(194, 189, 189);
     font-weight: bold;
     color: white;
+}
+
+th:first-child {
+    background-color: #e08d2c;
+
 }
 
 tbody tr:nth-child(even) {
