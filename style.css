@@ -1,0 +1,605 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Lato:wght@100;300;400;700;900&display=swap");
+
+:root {
+  --primary-color: #035f1d;
+  --secondary-color: #d34836;
+  --accent-color: #f5a623;
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --text-light-color: #ffffff;
+  --border-color: #e0e0e0;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --font-primary: "Lato", sans-serif;
+  --font-secondary: "Kaisei Tokumin", serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}
+
+/* Basic reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  margin: 10px 0;
+  padding: 20px;
+}
+
+.material-symbols-outlined {
+  margin-right: 8px;
+  vertical-align: middle;
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+}
+
+/* Header Styling */
+header {
+  background-color: #035f1d; /* Dark green background color */
+  width: 100%;
+  padding: 10px 0; /* Vertical padding */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the .header-contents horizontally */
+  position: fixed; /* Makes the header fixed */
+  top: 0; /* Positions the header at the top of the viewport */
+  left: 0;
+  z-index: 50;
+}
+
+.header-contents {
+  max-width: 1200px;
+  display: flex; /* Flexbox layout for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between;
+  width: 100%; /* Ensure .header-contents takes up full width of its container */
+  margin: 0; /* Remove default margin */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: transparent;
+  color: #ffffff;
+  display: flex; /* Added */
+  align-items: center; /* Added */
+  margin-left: auto; /* Pushes navbar to the right */
+  font-family: var(--font-secondary);
+  font-size: 18px;
+}
+
+/* Navbar Container */
+.navbar-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  width: 100%;
+}
+
+/* Navbar Logo */
+.logo-img img {
+  max-width: 100%; /* Responsive logo */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 20px;
+  filter: invert(1);
+}
+
+/* Toggle button styles */
+.toggle-button {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.toggle-button {
+  display: none;
+}
+
+.toggle-button {
+  z-index: 99;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+}
+
+.navbar-links ul {
+  list-style: none; /* Remove bullets */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Flexbox layout */
+}
+
+.navbar-links li {
+  position: relative; /* Ensure dropdowns work correctly */
+}
+
+.navbar-links a {
+  color: #ffffff; /* White text color */
+  padding: 14px 20px; /* Padding for links */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Block display for full clickable area */
+}
+
+/* Underlining navbar links*/
+.navbar-links a:after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #ffffffff;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+/* Underlining navbar links*/
+.navbar-links a:hover::after {
+  opacity: 1;
+}
+
+/* Dropdown Styling */
+.dropdown {
+  position: relative; /* Positioning for dropdown */
+}
+
+.dropbtn {
+  background-color: transparent; /* Transparent background for dropdown button */
+  color: --border-color; /* Primary accent color for text */
+  padding: 14px 20px; /* Padding for button */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Block display */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.dropdown-content {
+  display: none; /* Hide dropdown content by default */
+  position: absolute; /* Absolute positioning for dropdown content */
+  background-color: #ffffff; /* Background color for dropdown */
+  border: 1px solid #e0e0e0; /* Border color */
+  min-width: 160px; /* Minimum width */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+  z-index: 10; /* Ensure dropdown is on top */
+  top: 100%; /* Position below the dropdown button */
+  left: 0; /* Align to the left */
+}
+
+.dropdown-content a {
+  color: #333333; /* Dark text color */
+  padding: 12px 16px; /* Padding for dropdown items */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Block display */
+}
+
+.dropdown-content a:hover {
+  background-color: #333333; /* Secondary accent color on hover */
+  color: #ffffff; /* Change text color on hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown content on hover */
+}
+
+.dropdown:hover .dropbtn {
+  color: var(--border-color); /* Change text color of dropdown button on hover */
+}
+
+/* Burger menu styles for smaller screens */
+@media screen and (max-width: 959px) {
+  .navbar-links {
+    position: absolute;
+    top: 105px;
+    right: -200px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: flex-end;
+    padding: 0 16px 32px;
+    background-color: #035f1d;
+    height: 100vh;
+  }
+
+  .navbar-links.active {
+    transition: all ease 0.4s;
+    right: 0;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+  }
+
+  .navbar-links ul li {
+    text-align: right;
+  }
+
+  .toggle-button {
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: 21px;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 32px;
+    overflow-x: hidden;
+  }
+}
+
+/* Additional styles for smaller screens */
+@media (max-width: 480px) {
+  .logo-img {
+    margin-right: 0px;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+}
+
+/*hero section*/
+
+.header-contents {
+  flex-direction: row !important;
+}
+
+.intro-text h1 {
+  font-size: 28px !important;
+}
+
+.profile-image {
+  justify-content: center !important;
+}
+
+.hero-section {
+  min-height: 30vh !important;
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally within the main element */
+  max-width: 1410px;
+  margin: 0 auto;
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Flex container */
+.flex-container {
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
+.flex-container-hero {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  gap: 10rem;
+}
+
+/* .reverse {
+  flex-direction: row-reverse !important;
+}  */
+
+/* Flex items styling */
+.content {
+  flex: 1;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 70%;
+  border-radius: 50%;
+  box-shadow: 9px 10px 5px -6px rgba(0, 0, 0, 0.69);
+  -webkit-box-shadow: 9px 10px 5px -6px rgba(0, 0, 0, 0.69);
+  -moz-box-shadow: 9px 10px 5px -6px rgba(0, 0, 0, 0.69);
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.intro-text {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.intro-text h2 {
+  font-size: 52px;
+}
+
+.hero-section {
+  min-height: 60vh;
+}
+
+/* Mobile-specific styling */
+@media screen and (max-width: 959px) {
+  .flex-container {
+    flex-direction: column; /* Stack items vertically on mobile */
+  }
+
+  .content {
+    margin-bottom: 20px;
+  }
+
+  .content:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .flex-container-hero {
+
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      height: 80vh;
+  }
+
+  .intro-text {
+      padding: 10px;
+  }
+
+  .intro-text h1 {
+      font-size: 1.5rem;
+  }
+
+
+  .profile-image img {
+      max-width: 80%;
+      height: auto;
+  }
+}
+
+/* Content section */
+.content {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  margin: auto;
+}
+
+.content h1 {
+  font-family: "Kaisei Tokumin", serif;
+  color: #035f1d;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+h2,
+h1 {
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 32px;
+  font-weight: 650;
+  text-align: center;
+  color: #333333;
+  margin: 0 auto;
+}
+
+/* How can I help section with cards */
+
+.how-can-i-help {
+  text-align: center;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  margin-top: 10px;
+  padding: 5rem 20px;
+}
+
+/* Responsive design for grid layout */
+@media (max-width: 1000px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    margin: auto;
+  }
+}
+
+/* Card styles */
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+.card svg {
+  margin-left: 20px;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  font-family: "Kaisei Tokumin", serif;
+  color: #333333;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.card-content p {
+  color: black;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* Button styles */
+.primary-button,
+.secondary-button {
+  background-color: #d34836;
+  font-family: "Lato", sans-serif;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primary-button:hover {
+  background-color: #333333;
+}
+
+.secondary-button:hover {
+  background-color: #c13530;
+}
+
+/* Footer styles */
+footer {
+  background-color: #024010;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: var(--font-primary);
+  font-size: 18px;
+}
+
+.footer-heading {
+  font-family: var(
+    --font-secondary
+  ); /* Corrected to define only the font family */
+  font-weight: var(--font-weight-bold); /* Separate font-weight property */
+  color: white; /* Ensure text color consistency */
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-section-contact,
+.footer-section-navigation,
+.footer-section-social {
+  padding: 30px 0;
+  margin-left: 20px;
+}
+.footer-section-contact img{filter: invert(1);}
+.footer-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-weight: var(--font-weight-normal);
+}
+
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+}
+
+.social-icons a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #e08d2c;
+}
+
+@media all and (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    color: white;
+  }
+
+  .footer-section-contact,
+  .footer-section-navigation,
+  .footer-section-social {
+    padding: 15px 0;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,161 @@
+/* Basic resets */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title */
+.title {
+    font-size: 2.5rem; /* Reduced size for better scalability */
+    font-weight: bold;
+    margin-bottom: 20px; 
+    text-align: left;
+    line-height: 1.2;
+    color: #333; 
+    font-family: 'Arial', sans-serif; 
+    margin: 3rem 1rem;
+}
+
+/* About Me Section */
+.about-me-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 6rem auto; /* Center align the section */
+}
+
+/* About Me Container */
+.about-me-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8rem;
+    justify-content: center;
+    align-items: flex-start; /* Adjust alignment */
+    gap: 2rem; /* Adjust gap for smaller screens */
+}
+
+/* About Me Image */
+.about-me-image {
+    flex: 1;
+    max-width: 100%; /* Ensures image fits container */
+}
+
+.about-me-image img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+/* About Me Content */
+.about-me-content {
+    flex: 2;
+    padding: 20px;
+    max-width: 100%; /* Ensure it doesn’t overflow */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* About Me Columns */
+.about-me-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Responsive table styles */
+.about-me-table {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+th {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive table design for mobile */
+@media (max-width: 768px) {
+    .about-me-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        display: none; /* Hide the table headers */
+    }
+
+    tbody {
+        display: flex;
+        flex-direction: column;
+    }
+
+    tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+
+    tbody td {
+        display: block;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        position: relative;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        display: block;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .about-me-container {
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+
+    .about-me-content {
+        padding: 10px;
+    }
+
+
+
+}

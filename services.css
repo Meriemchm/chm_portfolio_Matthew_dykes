@@ -1,0 +1,78 @@
+/* Main section styling */
+main {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    margin-top: 8rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Flex container styling */
+.flex-container-service {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Reverse layout for desktop */
+.flex-container-service.reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-container-service div {
+    flex: 1;
+}
+
+.flex-container-service img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .flex-container-service {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .flex-container-service.reverse {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .flex-container-service img {
+        margin-bottom: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 0.9rem;
+    }
+}
