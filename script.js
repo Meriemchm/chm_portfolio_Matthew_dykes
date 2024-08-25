@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function () {
   const targetLinks = ['translation', 'seo-localisation', 'content-writing', 'editing'];
 
-  // Function to check if the link is one of the target links
+ 
   function isTargetLink(href) {
     const targetId = href.split('#')[1];
     return targetLinks.includes(targetId);
@@ -49,12 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const isOnServicesPage = window.location.pathname.includes('services.html');
 
         if (!isOnServicesPage) {
-          // Redirect to services page and scroll to the section
+          
           window.location.href = `services.html#${targetId}`;
-          event.preventDefault(); // Prevent default link behavior
+          event.preventDefault(); 
         } else {
-          // If already on services page, scroll to the section
-          event.preventDefault(); // Prevent default link behavior
+          
+          event.preventDefault(); 
           scrollToElement(targetId);
         }
       }
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const targetElement = document.getElementById(id);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 270, // Adjust this offset as needed for your header height
+        top: targetElement.offsetTop - 270, 
         behavior: 'smooth'
       });
     }
