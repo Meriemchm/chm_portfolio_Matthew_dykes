@@ -37,37 +37,36 @@ document.addEventListener('DOMContentLoaded', function () {
       const href = this.getAttribute('href');
       const targetId = href.split('#')[1];
 
-      // Check if the current page is 'services.html'
+ 
       const isOnServicesPage = window.location.pathname.includes('services.html');
 
       if (!isOnServicesPage) {
-        // If not on 'services.html', navigate to 'services.html' with the targetId as hash
+
         window.location.href = `services.html#${targetId}`;
       } else {
-        // If already on 'services.html', prevent default anchor behavior
+
         event.preventDefault();
 
-        // Scroll to the element
+
         scrollToElement(targetId);
       }
     });
   });
 
-  // Check if we have a hash in the URL when loading 'services.html'
   const hash = window.location.hash.substring(1);
   if (hash) {
-    // Scroll to the element with a delay to ensure the page has loaded
+
     setTimeout(() => {
       scrollToElement(hash);
-    }, 10); // Adjust this timeout as needed
+    }, 10); 
   }
 
-  // Function to scroll to the element
+
   function scrollToElement(id) {
     const targetElement = document.getElementById(id);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 270, // Adjust this offset for your header height
+        top: targetElement.offsetTop - 270, 
         behavior: 'smooth'
       });
     }
