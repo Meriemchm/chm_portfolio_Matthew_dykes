@@ -16,21 +16,49 @@ document.addEventListener('DOMContentLoaded', function () {
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Check if the element is in the viewport
+
       if (rect.top < windowHeight && rect.bottom >= 0) {
-        element.classList.add('visible'); // Add class to start animation
+        element.classList.add('visible'); 
       }
     });
   };
 
-  // Run the function on scroll and on page load
+
   window.addEventListener('scroll', fadeUpOnScroll);
-  fadeUpOnScroll(); // Initial check to fade up elements already in view on page load
+  fadeUpOnScroll(); 
+});
+
+/////////////////////////
+
+// scrolling into the links
+
+document.addEventListener('DOMContentLoaded', function () {
+  
+  const links = document.querySelectorAll('a[href*="#"]');
+
+  links.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); 
+
+      
+      const targetId = this.getAttribute('href').split('#')[1];
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 270, 
+          behavior: 'smooth' 
+        });
+      }
+    });
+  });
 });
 
 
+
 /////////////////////////////////
-// Define the navigation items
+// navigation items
 const NavItems = [
   {
     name: "Home",
@@ -92,7 +120,7 @@ NavItems.forEach((navItem) => {
 document.querySelector(".navbar-link-container").innerHTML = NavbarHtml;
 
 ////////////////////////
-// cards.js
+// cards
 
 const cardItems = [
   {
